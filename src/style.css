@@ -1,0 +1,281 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  position: fixed;
+  font-size: 40px;
+  line-height: 1.1;
+  top: 0px;
+  background-color: white;
+  border-bottom: 1px solid #333;
+}
+
+.players-button  button{
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.players-button button:hover {
+  border-color: #646cff;
+}
+.players-button button:focus,
+.players-button button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.players-button {
+  padding: 1em;
+}
+
+#app {
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+.turn-order-deck-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 5px;
+  min-height: 96px;
+}
+
+.cardEE-back {
+}
+
+.turn-order-played-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 5px;
+  min-height: 192px;
+}
+
+.cardEEWrapper:last-child,
+.cardEEWrapper:hover {
+  overflow: visible;
+}
+
+.cardEE-front {
+}
+
+.cardEEWrapper {
+  overflow: hidden;
+}
+
+.turn-order-played-container .cardEEWrapper:not(:last-child) {
+  zoom: 66%;
+}
+
+.cardEEWrapper:last-child,
+.cardEEWrapper:hover {
+  overflow: visible;
+}
+
+.cardEE {
+  width: 8em;
+  min-width: 8em;
+  height: 12em;
+  border-radius: 0.5em;
+  border: solid #666 1px;
+  background-color: #ccc;
+  padding: 0.25em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/card-back.png);
+  background-size: cover;
+}
+
+.cardEE-back {
+  width: 4em;
+  min-width: 4em;
+  height: 6em;
+  background-image: url(assets/card-back.png);
+  background-size: cover;
+}
+
+.cardEE-1 {
+  background-image: url(assets/card-1.png);
+}
+.cardEE-2 {
+  background-image: url(assets/card-2.png);
+}
+.cardEE-3 {
+  background-image: url(assets/card-3.png);
+}
+.cardEE-4 {
+  background-image: url(assets/card-4.png);
+}
+.cardEE-12 {
+  background-image: url(assets/card-12.png);
+}
+.cardEE-23 {
+  background-image: url(assets/card-23.png);
+}
+.cardEE-W {
+  background-image: url(assets/card-W.png);
+}
+.cardEE-N {
+  background-image: url(assets/card-N.png);
+}
+.cardEE {
+  position: relative;
+}
+.cardEE button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 6px;
+  margin: 2px;
+  font-size: 0.6em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  background-color: rgba(200,200,200,0.7);
+}
+.cardEE button.putBottom {
+  position: absolute;
+  bottom: 3px;
+  left: 2px;
+}
+.cardEE button.putTop {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.cardEE button:hover {
+  border-color: #646cff;
+}
+.cardEE button:focus,
+.cardEE button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.nemesis-hp-container,
+.gravehold-hp-container {
+  padding: 20px 10px 52px 10px;
+  border-radius: 5px;
+  /*background-color: #909090;*/
+  margin: 10px;
+  display: inline-block;
+}
+
+.nemesis-hp-container {
+  background-image: url(assets/nemesis.png);
+  background-size: cover;
+}
+
+.gravehold-hp-container {
+  background-image: url(assets/gravehold.png);
+  background-size: cover;
+}
+
+.nemesis-hp-container button,
+.gravehold-hp-container button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #a0a0a0;
+  margin: 2px;
+  margin-top: -20px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+.input-hp {
+  width: 2em;
+  font-size: 40px;
+  text-align: center;
+  border-radius: 10px;
+}
+.value{
+  font-weight: bold;
+  font-size: 120%;
+}
+
+.navbar{
+  border-bottom: 1px solid black;
+}
+
+.game-button {
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.new-game-info{
+  margin: 10px;
+  font-weight: bold;
+}
+
+.header-small{
+  font-size: 80%;
+}
+
+.hp-title{
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}

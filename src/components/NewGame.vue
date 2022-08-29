@@ -1,0 +1,63 @@
+<script setup>
+import { ref } from 'vue';
+import { store } from '../store.js';
+
+defineProps({
+  title: String,
+});
+
+const startGame = (players) => {
+  const orderDeck = {
+    1: ['1', '1', '1', 'N', 'N'],
+    2: ['1', '1', '2', '2', 'N', 'N'],
+    3: ['1', '2', '3', 'W', 'N', 'N'],
+    4: ['1', '2', '3', '4', 'N', 'N'],
+  };
+
+  store.setValues({
+    game: true,
+    players: players,
+    turn: 0,
+    nemesisHp: 60,
+    graveholdHp: 30,
+    turnOrderCards: orderDeck[players],
+    turnOrderDeck: [],
+    turnOrderPlayed: [],
+  });
+
+  window.location.hash = '/game';
+};
+
+const count = ref(0);
+</script>
+
+<template>
+  <nav class="navbar sticky-top bg-dark">
+    <div class="container-fluid">
+        <span class="fs-4 text-light">Aeon's End - Assistant</span>
+    </div>
+  </nav>
+
+  <div class="new-game-info">
+  Nuova partita, scegli il numero di giocatori:
+  </div>
+
+  <div class="players-button">
+    <button type="button" @click="startGame(1)">1 Giocatore</button>
+  </div>
+  <div class="players-button">
+    <button type="button" @click="startGame(2)">2 Giocatori</button>
+  </div>
+  <div class="players-button">
+    <button type="button" @click="startGame(3)">3 Giocatori</button>
+  </div>
+  <div class="players-button">
+    <button type="button" @click="startGame(4)">4 Giocatori</button>
+  </div>
+</template>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
