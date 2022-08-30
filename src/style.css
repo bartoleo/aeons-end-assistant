@@ -101,7 +101,7 @@ h1 {
 .cardEE {
   width: 8em;
   min-width: 8em;
-  height: 12em;
+  height: 11em;
   border-radius: 0.5em;
   border: solid #666 1px;
   background-color: #ccc;
@@ -117,7 +117,7 @@ h1 {
 .cardEE-back {
   width: 4em;
   min-width: 4em;
-  height: 6em;
+  height: 5.5em;
   background-image: url(assets/card-back.png);
   background-size: cover;
 }
@@ -184,7 +184,7 @@ h1 {
 
 .nemesis-hp-container,
 .gravehold-hp-container {
-  padding: 20px 10px 52px 10px;
+  padding: 32px 10px 52px 10px;
   border-radius: 5px;
   /*background-color: #909090;*/
   margin: 10px;
