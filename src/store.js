@@ -2,7 +2,7 @@ import { reactive } from 'vue';
 
 export const store = reactive({
   initialized: false,
-  players: 0,
+  players: '0',
   turn: 0,
   nemesisHp: 0,
   graveholdHp: 0,

@@ -21,7 +21,8 @@ onMounted(() => {
   if (!store.initialized){
     store.load();
   }
-  if (store.game) {
+  console.log(store);
+  if (store.players != '0') {
     window.location.hash = '/game';
   } else {
     window.location.hash = '/';

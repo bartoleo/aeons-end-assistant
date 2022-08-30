@@ -4,10 +4,6 @@
   line-height: 24px;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -46,45 +42,13 @@ h1 {
   border-bottom: 1px solid #333;
 }
 
-.players-button  button{
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-.players-button button:hover {
-  border-color: #646cff;
-}
-.players-button button:focus,
-.players-button button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-.players-button {
-  padding: 1em;
+.new-game-buttons button{
+  margin: 5px;
 }
 
 #app {
   margin: 0 auto;
   text-align: center;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .turn-order-deck-container {
@@ -98,7 +62,9 @@ h1 {
 }
 
 .cardEE-back {
+  box-shadow: rgba(0, 0, 0, 0.30) 1.95px 1.95px 2.6px;
 }
+
 
 .turn-order-played-container {
   display: flex;
@@ -116,6 +82,7 @@ h1 {
 }
 
 .cardEE-front {
+  box-shadow: rgba(0, 0, 0, 0.30) 1.95px 1.95px 2.6px;
 }
 
 .cardEEWrapper {
@@ -227,32 +194,30 @@ h1 {
 .nemesis-hp-container {
   background-image: url(assets/nemesis.png);
   background-size: cover;
+  padding: 25px 10px 38px 10px;
 }
 
 .gravehold-hp-container {
   background-image: url(assets/gravehold.png);
   background-size: cover;
+  padding: 25px 10px 38px 10px;
 }
 
 .nemesis-hp-container button,
 .gravehold-hp-container button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #a0a0a0;
   margin: 2px;
   margin-top: -20px;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  border: 3px solid rgba(200,200,200,0.5);
 }
 .input-hp {
   width: 2em;
   font-size: 40px;
   text-align: center;
   border-radius: 10px;
+  border: 3px solid rgba(200,200,200,0.5);
 }
 .value{
   font-weight: bold;
@@ -264,8 +229,11 @@ h1 {
 }
 
 .game-button {
-  border-radius: 5px;
   margin: 10px;
+}
+
+.game-button:disabled {
+  opacity: 30% !important;
 }
 
 .new-game-info{
@@ -301,4 +269,16 @@ h1 {
   .game-button{
     zoom: 120%;
   }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

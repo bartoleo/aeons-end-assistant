@@ -40,30 +40,28 @@ const count = ref(0);
     </div>
   </nav>
 
-  <div class="new-game-info">
-  Nuova partita, scegli il numero di giocatori:
+  <div class="card">
+    <div class="card-body new-game-info" >
+      Nuova partita, scegli il numero di giocatori:
+    </div> 
   </div>
 
-  <div class="players-button">
-    <button type="button" @click="startGame('1_3')">1 Giocatore (difficile: 3 carte)</button>
+  <div class="new-game-buttons">
+    <button class="btn btn-primary" type="button" @click="startGame('1_3')">1 Giocatore (difficile: 3 carte)</button>
+    <button class="btn btn-primary" type="button" @click="startGame('1_34')">1 Giocatore (medio: 3/4 carte)</button>
+    <button class="btn btn-primary" type="button" @click="startGame('1_4')">1 Giocatore (facile: 4 carte)</button>
   </div>
   
-  <div class="players-button">
-    <button type="button" @click="startGame('1_34')">1 Giocatore (medio: 3/4 carte)</button>
+  <div class="new-game-buttons">
+    <button class="btn btn-primary" type="button" @click="startGame('2')">2 Giocatori</button>
   </div>
   
-  <div class="players-button">
-    <button type="button" @click="startGame('1_4')">1 Giocatore (facile: 4 carte)</button>
+  <div class="new-game-buttons">
+    <button class="btn btn-primary" type="button" @click="startGame('3')">3 Giocatori</button>
   </div>
 
-  <div class="players-button">
-    <button type="button" @click="startGame('2')">2 Giocatori</button>
-  </div>
-  <div class="players-button">
-    <button type="button" @click="startGame('3')">3 Giocatori</button>
-  </div>
-  <div class="players-button">
-    <button type="button" @click="startGame('4')">4 Giocatori</button>
+  <div class="new-game-buttons">
+    <button class="btn btn-primary" type="button" @click="startGame('4')">4 Giocatori</button>
   </div>
 </template>
 

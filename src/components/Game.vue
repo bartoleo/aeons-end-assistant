@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onMounted } from 'vue';
 import { store } from '../store.js';
 
 defineProps({
@@ -22,11 +22,11 @@ watch(graveholdHp, (newValue, oldValue) => {
 });
 
 const changeNemesisHp = (value) => {
-  nemesisHp.value += value;
+  nemesisHp.value = parseInt(nemesisHp.value) + value;
 };
 
 const changeGraveholdHp = (value) => {
-  graveholdHp.value += value;
+  graveholdHp.value = parseInt(graveholdHp.value) + value;
 };
 
 const isNewTurnDisabled = computed(() => {
@@ -127,6 +127,13 @@ const reset = () => {
     window.location.hash = '/';
   }
 };
+
+onMounted(() => {
+  if (store.turn==0){
+    newTurn();
+  }
+});
+
 </script>
 
 <template>
@@ -135,7 +142,7 @@ const reset = () => {
     <div class="container-fluid">
           <span class="fs-4 text-light">Aeon's End - Assistant</span>
           <span class="fs-4 text-light header-small">Giocatori: <span class="value">{{ store.players }}</span> - Turn: <span class="value">{{ store.turn }}</span></span>
-          <button type="button" @click="reset" class="game-button">Reset</button>
+          <button class="btn btn-danger" type="button" @click="reset">Reset</button>
     </div>
   </nav>
 
@@ -164,11 +171,11 @@ const reset = () => {
     </div>
   </div>
 
-  <button :disabled="isDrawCardDisabled" type="button" @click="drawCard" class="game-button">
+  <button :disabled="isDrawCardDisabled" type="button" @click="drawCard"  class="btn btn-primary game-button">
     Pesca Carta
   </button>
 
-  <button :disabled="isNewTurnDisabled" type="button" @click="newTurn" class="game-button">
+  <button :disabled="isNewTurnDisabled" type="button" @click="newTurn"  class="btn btn btn-success game-button">
     Nuovo Turno
   </button>
 
@@ -177,29 +184,29 @@ const reset = () => {
       <div class="hp-title">Nemesis</div>
       <div>
         <button
-          class="decrement decrement-5"
+          class="btn btn-danger decrement decrement-5"
           type="button"
           @click="changeNemesisHp(-5)"
         >
           -5
         </button>
         <button
-          class="decrement decrement-1"
+          class="btn btn-danger decrement decrement-1"
           type="button"
           @click="changeNemesisHp(-1)"
         >
           -1
         </button>
-        <input v-model="nemesisHp" class="input-hp" />
+        <input v-model="nemesisHp" type="number" class="input-hp" />
         <button
-          class="increment increment-1"
+          class="btn btn-success increment increment-1"
           type="button"
           @click="changeNemesisHp(1)"
         >
           +1
         </button>
         <button
-          class="decrement decrement-5"
+          class="btn btn-success increment increment-5"
           type="button"
           @click="changeNemesisHp(5)"
         >
@@ -212,29 +219,29 @@ const reset = () => {
       <div class="hp-title">Gravehold</div>
       <div>
         <button
-          class="decrement decrement-5"
+          class="btn btn-danger decrement decrement-5"
           type="button"
           @click="changeGraveholdHp(-5)"
         >
           -5
         </button>
         <button
-          class="decrement decrement-1"
+          class="btn btn-danger decrement decrement-1"
           type="button"
           @click="changeGraveholdHp(-1)"
         >
           -1
         </button>
-        <input v-model="graveholdHp" class="input-hp" />
+        <input v-model="graveholdHp" type="number" class="input-hp" />
         <button
-          class="increment increment-1"
+          class="btn btn-success increment increment-1"
           type="button"
           @click="changeGraveholdHp(1)"
         >
           +1
         </button>
         <button
-          class="decrement decrement-5"
+          class="btn btn-success increment increment-5"
           type="button"
           @click="changeGraveholdHp(5)"
         >
