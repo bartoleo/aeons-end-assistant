@@ -262,7 +262,7 @@ h1 {
 
 .game-button {
   border-radius: 5px;
-  margin: 5px;
+  margin: 10px;
 }
 
 .new-game-info{
@@ -278,4 +278,24 @@ h1 {
   font-size: 18px;
   font-weight: bold;
   color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar{
+    zoom: 50%;
+  }
+  .turn-order-deck-container{
+    zoom: 60%;
+  }
+
+  .nemesis-hp-container {
+    zoom: 80%;
+  }
+
+  .gravehold-hp-container {
+    zoom: 80%;
+  }
+  .game-button{
+    zoom: 120%;
+  }
 }
