@@ -8,10 +8,12 @@ defineProps({
 
 const startGame = (players) => {
   const orderDeck = {
-    1: ['1', '1', '1', 'N', 'N'],
-    2: ['1', '1', '2', '2', 'N', 'N'],
-    3: ['1', '2', '3', 'W', 'N', 'N'],
-    4: ['1', '2', '3', '4', 'N', 'N'],
+    '1_3': ['1', '1', '1', 'N', 'N'],
+    '1_34': ['1' ,'1', '1', '1B', 'N', 'N'],
+    '1_4': ['1','1', '1', '1', 'N', 'N'],
+    '2': ['1', '1', '2', '2', 'N', 'N'],
+    '3': ['1', '2', '3', 'W', 'N', 'N'],
+    '4': ['1', '2', '3', '4', 'N', 'N'],
   };
 
   store.setValues({
@@ -43,16 +45,25 @@ const count = ref(0);
   </div>
 
   <div class="players-button">
-    <button type="button" @click="startGame(1)">1 Giocatore</button>
+    <button type="button" @click="startGame('1_3')">1 Giocatore (difficile: 3 carte)</button>
+  </div>
+  
+  <div class="players-button">
+    <button type="button" @click="startGame('1_34')">1 Giocatore (medio: 3/4 carte)</button>
+  </div>
+  
+  <div class="players-button">
+    <button type="button" @click="startGame('1_4')">1 Giocatore (facile: 4 carte)</button>
+  </div>
+
+  <div class="players-button">
+    <button type="button" @click="startGame('2')">2 Giocatori</button>
   </div>
   <div class="players-button">
-    <button type="button" @click="startGame(2)">2 Giocatori</button>
+    <button type="button" @click="startGame('3')">3 Giocatori</button>
   </div>
   <div class="players-button">
-    <button type="button" @click="startGame(3)">3 Giocatori</button>
-  </div>
-  <div class="players-button">
-    <button type="button" @click="startGame(4)">4 Giocatori</button>
+    <button type="button" @click="startGame('4')">4 Giocatori</button>
   </div>
 </template>
 

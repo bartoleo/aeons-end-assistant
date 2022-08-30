@@ -58,12 +58,20 @@ const shuffle = (array) => {
 
 const newTurn = () => {
   let newDeck = [];
+  let newTurn = store.turn + 1;
+  //Card 1B only on odd turns (1,3,5...)
   for (var index in store.turnOrderCards) {
-    newDeck.push(store.turnOrderCards[index]);
+    if (store.turnOrderCards[index]=='1B'){
+      if (newTurn%2==1){
+        newDeck.push(store.turnOrderCards[index]);
+      }
+    } else {
+      newDeck.push(store.turnOrderCards[index]);
+    }
   }
   newDeck = shuffle(newDeck);
   store.setValues({
-    turn: store.turn + 1,
+    turn: newTurn,
     turnOrderDeck: newDeck,
     turnOrderPlayed: [],
   });
