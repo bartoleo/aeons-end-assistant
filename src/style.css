@@ -1,3 +1,5 @@
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -194,13 +196,13 @@ h1 {
 .nemesis-hp-container {
   background-image: url(assets/nemesis.png);
   background-size: cover;
-  padding: 25px 10px 38px 10px;
+  padding: 25px 10px 27px 10px;
 }
 
 .gravehold-hp-container {
   background-image: url(assets/gravehold.png);
   background-size: cover;
-  padding: 25px 10px 38px 10px;
+  padding: 25px 10px 27px 10px;
 }
 
 .nemesis-hp-container button,
@@ -251,6 +253,106 @@ h1 {
   color: white;
 }
 
+.hp-change{
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.nemesis-deck-text{
+  margin-top: 3px;
+}
+
+.nemesis-card-turn-chart {
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 0px 5px 0px 5px;
+  margin-top: 3px;
+}
+
+.nemesis-card-turn-chart-1 {
+  color: green;
+}
+
+.nemesis-card-turn-chart-2 {
+  color: #d7d74f;
+}
+
+.nemesis-card-turn-chart-3 {
+  color: red;
+}
+
+.nemesis-card-turn-chart-X {
+  color: black;
+}
+
+.nemesis-card-turn-chart-past {
+  opacity: 0.5;
+  background-color: #808080;
+}
+
+.nemesis-card-turn-chart-actual {
+  border-width: 3px !important;
+  background-color: rgb(255, 255, 195);
+  margin: 0px 1px 0px 1px;
+}
+
+.shuffleTurnOrderDeck{
+  margin-left: 2px;
+}
+.shuffleTurnOrderDeck .button-text{
+  font-size: 8px !important;
+}
+
+.game-button-bar button{
+  margin-left: 2px;
+}
+
+.game-button-bar button.btn-primary-outline{
+  color: white;
+}
+
+.history-container{
+  text-align: center;
+}
+
+.history-table{
+  border-collapse: collapse;
+}
+
+.history-table td, .history-table th{
+  padding:2px;
+  text-align: center;
+  border: 1px solid #333;
+  font-size: 10px;
+}
+
+.icon-crossed {
+  position: relative;
+}
+.icon-crossed:after {
+  position: absolute;
+  content: "/";
+  color: white;
+  font-weight: 700;
+  font-size: 1.7em;
+  left: 5px;
+  top: -7px;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar{
     zoom: 50%;
@@ -267,18 +369,17 @@ h1 {
     zoom: 80%;
   }
   .game-button{
-    zoom: 120%;
+    zoom: 110%;
   }
-}
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+  .nemesis-deck-text{
+    font-size: 9px;
+  }
+  
+  .nemesis-card-turn-chart {
+    border: 1px solid black;
+    font-weight: 700;
+    font-size: 8px;
+    padding: 0 2px 0 2px;
+  }  
 }

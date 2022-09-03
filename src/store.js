@@ -4,21 +4,28 @@ export const store = reactive({
   initialized: false,
   players: '0',
   turn: 0,
+  nemesisTurn: 0,
   nemesisHp: 0,
   graveholdHp: 0,
   turnOrderCards: [],
   turnOrderDeck: [],
   turnOrderPlayed: [],
+  audio: true,
+  audioVolume: 1,
+  history: [],
+  viewHistory: true,
   reset() {
     this.setValues({
       initialized: true,
       players: 0,
       turn: 0,
+      nemesisTurn: 0,
       nemesisHp: 0,
       graveholdHp: 0,
       turnOrderCards: [],
       turnOrderDeck: [],
       turnOrderPlayed: [],
+      history: [],
     });
   },
   load() {

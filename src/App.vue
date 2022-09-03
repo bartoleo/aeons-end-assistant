@@ -1,3 +1,4 @@
+
 <script setup>
 import { ref, defineProps, onMounted, computed } from 'vue';
 import { store } from './store.js';
