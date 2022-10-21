@@ -353,6 +353,24 @@ input[type=number] {
   top: -7px;
 }
 
+.setup-nemesis {
+}
+
+.table-setup-nemesis {
+  margin: 0 auto; /* or margin: 0 auto 0 auto */
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table-setup-nemesis th, .table-setup-nemesis td{
+  padding: 3px;
+  border: 1px solid black;
+}
+
+.audioVolume-slider{
+  width: 200px;
+}
+
 @media only screen and (max-width: 600px) {
   .navbar{
     zoom: 50%;
@@ -381,5 +399,6 @@ input[type=number] {
     font-weight: 700;
     font-size: 8px;
     padding: 0 2px 0 2px;
-  }  
+  }
+  
 }

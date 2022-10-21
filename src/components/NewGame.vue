@@ -6,6 +6,10 @@ defineProps({
   title: String,
 });
 
+const config = () => {
+  window.location.hash = '/config';
+}
+
 const startGame = (players) => {
   const orderDeck = {
     '1_3': ['1', '1', '1', 'N', 'N'],
@@ -37,6 +41,9 @@ const count = ref(0);
   <nav class="navbar sticky-top bg-dark">
     <div class="container-fluid">
         <span class="fs-4 text-light">Aeon's End - Assistant</span>
+        <span class="game-button-bar">
+          <button class="btn btn-primary-outline" type="button" @click="config"><i class="fas fa-gear"></i></button>
+        </span>
     </div>
   </nav>
 
@@ -63,6 +70,84 @@ const count = ref(0);
   <div class="new-game-buttons">
     <button class="btn btn-primary" type="button" @click="startGame('4')">4 Giocatori</button>
   </div>
+
+  <div class="setup-nemesis">
+    <table class="table-setup-nemesis">
+      <thead>
+        <tr>
+          <th>
+            Carte nemesi<br/>da aggiungere
+          </th>
+          <th>
+            1 Giocatore
+          </th>
+          <th>
+            2 Giocatori
+          </th>
+          <th>
+            3 Giocatori
+          </th>
+          <th>
+            4 Giocatori
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+          Livello 1
+          </td>
+          <td>
+            1
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            8
+          </td>
+        </tr>
+        <tr>
+          <td>
+          Livello 2
+          </td>
+          <td>
+            3
+          </td>
+          <td>
+            5
+          </td>
+          <td>
+            6
+          </td>
+          <td>
+            7
+          </td>
+        </tr>
+        <tr>
+          <td>
+          Livello 3
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            7
+          </td>
+          <td>
+            7
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </template>
 
 <style scoped>

@@ -4,11 +4,13 @@ import { ref, defineProps, onMounted, computed } from 'vue';
 import { store } from './store.js';
 import NewGame from './components/NewGame.vue';
 import Game from './components/Game.vue';
+import Config from './components/Config.vue';
 import NotFound from './components/NotFound.vue';
 
 const routes = {
   '/': NewGame,
   '/game': Game,
+  '/config': Config,
   //'/about': About,
 };
 
@@ -19,10 +21,11 @@ const currentView = computed(() => {
 });
 
 onMounted(() => {
+
   if (!store.initialized){
     store.load();
   }
-  console.log(store);
+
   if (store.players != '0') {
     window.location.hash = '/game';
   } else {

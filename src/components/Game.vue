@@ -123,7 +123,7 @@ const newTurn = () => {
     turnOrderPlayed: [],
   });
 
-  recalculateNemesisDeckText();3
+  recalculateNemesisDeckText();
 
   if (store.audio){
     const audioFile = new Audio('sounds/shuffle.wav');
@@ -283,6 +283,9 @@ const toggleViewHistory = () => {
   });
 }
 
+const config = () => {
+  window.location.hash = '/config';
+}
 
 const shuffleTurnOrderDeck = () => {
   if (window.confirm('Confermi di rimischiare il mazzo ordine di turno?')) {
@@ -382,6 +385,7 @@ onMounted(() => {
       <span class="fs-4 text-light">Aeon's End - Assistant</span>
       <span class="fs-4 text-light header-small">Giocatori: <span class="value">{{ store.players }}</span> - Turn: <span class="value">{{ store.turn }}</span></span>
       <span class="game-button-bar">
+        <button class="btn btn-primary-outline" type="button" @click="config"><i class="fas fa-gear"></i></button>
         <button class="btn btn-primary-outline" type="button" @click="toggleViewHistory"><i v-if="viewHistory==true" class="fas fa-table-list"></i><i v-if="viewHistory==false" class="fas fa-table-list icon-crossed"></i></button>
         <button class="btn btn-primary-outline" type="button" @click="toggleAudio"><i v-if="audio==true" class="fas fa-volume-high"></i><i v-if="audio==false" class="fas fa-volume-xmark"></i></button>
         <button class="btn btn-danger" type="button" @click="reset"><i class="fas fa-circle-xmark"></i> Reset</button>
